@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("FineUICore.EmptyProject.RazorForms")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+8024e0a0c988bb600611ca00342a1fecce960d72")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+4f8fed6ad9e9257897d61b249a3d36723d44f3cb")]
 [assembly: System.Reflection.AssemblyProductAttribute("FineUICore.EmptyProject.RazorForms")]
 [assembly: System.Reflection.AssemblyTitleAttribute("FineUICore.EmptyProject.RazorForms")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
