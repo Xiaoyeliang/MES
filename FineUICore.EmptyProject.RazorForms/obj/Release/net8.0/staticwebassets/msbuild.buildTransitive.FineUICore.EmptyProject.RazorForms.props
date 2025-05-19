@@ -1,0 +1,3 @@
+﻿<Project>
+  <Import Project="..\buildMultiTargeting\FineUICore.EmptyProject.RazorForms.props" />
+</Project>

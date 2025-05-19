@@ -1,0 +1,134 @@
+﻿@page
+@model FineUICore.EmptyProject.RazorForms.Pages.OPBasic.OpSettingModel
+@{
+    ViewBag.SourceFiles = "~/Grid/IFrameWindow";
+    ViewBag.Title = "OPBasic/OpSetting";
+    var F = Html.F();
+}
+@functions {
+    ParamsFunc<string, object, string> _R => Model.GetResource;
+    ParamsFunc<string, object, string> _L => Model.GetResource_L;
+}
+
+
+@section body {
+
+    <f:Panel ID="Panel7" BodyPadding="20" Title="Panel" ShowBorder="false" ShowHeader="false" Layout="VBox"
+        BoxConfigAlign="Stretch" IsViewPort="true">
+        <Items>
+            <f:Form ID="Form5" ShowBorder="false" ShowHeader="false">
+                <Rows>
+                    <f:FormRow>
+                        <Items>
+                            <f:TwinTriggerBox runat="server" EmptyText="@_R("输入要搜索的关键词,作業站編號，作業站名稱等等")" ShowLabel="false" ID="ttbSearch"
+                                ShowTrigger1="false" OnTrigger1Click="ttbSearch_Trigger1Click"
+                                OnTrigger2Click="ttbSearch_Trigger2Click" Trigger1Icon="Clear" Trigger2Icon="Search">
+                            </f:TwinTriggerBox>
+                            <f:DropDownList ID="dllApproval" ShowLabel="false" OnSelectedIndexChanged="dllApproval_SelectedIndexChanged">
+                                <f:ListItem Text="未簽核" Value="Approval" />
+                                <f:ListItem Text="簽核中" Value="Approvaling" />
+                                <f:ListItem Text="已簽核" Value="Approvaled" />
+                            </f:DropDownList>
+                        </Items>
+                    </f:FormRow>
+                </Rows>
+            </f:Form>
+            <f:Grid ID="OPGrid" Title="OPGrid" PageSize="15" ShowBorder="true" BoxFlex="1" AllowPaging="true"
+                IsDatabasePaging="false" ShowHeader="false" EnableCheckBoxSelect="true" DataIDField="OPNO"
+                DataTextField="Name" OnSort="Grid2_Sort">
+                <Toolbars>
+                    <f:Toolbar ID="Toolbar2">
+                        <Items>
+                            <f:Button ID="btnPopupWindow" Text="@_R("新增")" runat="server" OnClick="btnPopupWindow_Click">
+                            </f:Button>
+                            <f:ToolbarSeparator ID="ToolbarSeparator1" runat="server">
+                            </f:ToolbarSeparator>
+                            <f:Button ID="btnCheckSelection" Text="@_R("修改")" runat="server" OnClick="btnCheckSelection_Click">
+                            </f:Button>
+                            <f:ToolbarSeparator ID="ToolbarSeparator2" runat="server">
+                            </f:ToolbarSeparator>
+                            <f:Button ID="btnDelete" Text="@_L("删除")" runat="server">
+                            </f:Button>
+                            <f:ToolbarSeparator ID="ToolbarSeparator3" runat="server">
+                            </f:ToolbarSeparator>
+                            <f:Button ID="btnCopy" Text="@_R("複製")" runat="server">
+                            </f:Button>
+                            <f:ToolbarSeparator ID="ToolbarSeparator1" runat="server">
+                            </f:ToolbarSeparator>
+                            <f:Button ID="btnApproval" Text="@_R("核准")" runat="server" OnClick="btnApproval_Click">
+                            </f:Button>
+                        </Items>
+                    </f:Toolbar>
+                </Toolbars>
+                <Columns>
+
+                    <f:RenderField HeaderText="" EnableHeaderMenu="false" Width="100">
+                        <Commands>
+                            <f:Command CommandName="Action1" Icon="Pencil" ToolTip="编辑" CssClass="editfield"
+                                WindowID="Window1" WindowIFrameUrlFormatString="@Url.Content("~/Grid/IFrameWindow?id={0}")"
+                                _WindowIFrameUrlFields="Id" WindowTitleFormatString="编辑 - {0}" />
+                            <f:Command CommandName="Action2" Icon="Delete" ToolTip="删除" CssClass="deletefield"
+                                ConfirmText="你确定要删除这行数据吗？" ConfirmTarget="Top" OnCommand="onDeleteRow" />
+                        </Commands>
+                    </f:RenderField>
+
+                    <f:RowNumberField />
+
+                    <f:RenderField Width="100" DataField="OPNO"  HeaderText="@_R("作業站編號")" />
+                    <f:RenderField Width="100" DataField="OPNAME" HeaderText="@_R("作業站名稱")" />
+                    <f:RenderField Width="100" DataField="OPTYPE" HeaderText="@_R("作業站類別")" />
+                    <f:RenderField Width="100" DataField="OPCLASS" HeaderText="@_R("作業站分類")" />
+                    <f:RenderField Width="100" DataField="OPSHORTNAME" HeaderText="作業站簡稱" />
+                    <f:RenderField Width="100" DataField="OPORDER" HeaderText="作業站次序" />
+                    <f:RenderField Width="100" DataField="DESCRIPTION" HeaderText="說明" />
+                    <f:RenderField Width="100" DataField="CREATOR" HeaderText="建立人" />
+                    <f:RenderField Width="100" DataField="CREATEDATE" HeaderText="建立日" />
+                    <f:RenderField Width="100" DataField="PSNO" HeaderText="區域編號" />
+                    <f:RenderField Width="100" DataField="PRINTOUTONRUNCA" HeaderText="是否列印" />
+                    <f:RenderField Width="100" DataField="stdunitruntime" HeaderText="標準單位工時" />
+                    <f:RenderField Width="100" DataField="countopunitqty" HeaderText="計時基本數量" />
+                    <f:RenderField Width="100" DataField="stdqueuetime" HeaderText="標準等待時間"  />
+
+
+                </Columns>
+            </f:Grid>
+        </Items>
+    </f:Panel>
+    <f:Window ID="Window1" Title="弹出窗体" Hidden="true" EnableIFrame="true" EnableMaximize="true" Target="Top"
+        EnableResize="true" IsModal="true" Width="850" Height="450" CloseAction="HidePostBack" OnClose="Window1_Close">
+    </f:Window>
+
+}
+
+
+@section script {
+    <script src="~/res/js/grid.js"></script>
+    <script>
+        function onDeleteRow(commandArgs) {
+            // 获取选中行的 ID
+            var id = commandArgs.data.Id;
+
+            // 调用后端接口删除数据
+            $.ajax({
+                url: '@Url.Page("GridIFrame", "DeleteRow")', // 后端接口地址
+                type: 'POST',
+                data: { id: id },
+                success: function (response) {
+                    if (response.success) {
+                        alert(response.message);
+                        // 刷新表格
+                        F.grid.reload();
+                    } else {
+                        alert("删除失败：" + response.message);
+                    }
+                },
+                error: function () {
+                    alert("请求失败，请稍后重试！");
+                }
+            });
+        }
+    </script>
+     <script type="text/javascript">
+        @Html.Raw(FineUICore.PageContext.GetJavaScriptResourcesReference<SharedJavaScriptResources>())
+    </script>
+}

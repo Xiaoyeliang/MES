@@ -1,0 +1,13 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Tree>
+	<TreeNode Text="作業站模組" IconFont="_Gallery">
+		<TreeNode Text="作業站設定" NavigateUrl="~/OPBasic/OPSetting">
+		</TreeNode>
+		<TreeNode Text="作業站群組" NavigateUrl="~/OPBasic/OPSetting" IconFont="SignIn">
+		</TreeNode>
+		<TreeNode Text="企業邏輯定義" NavigateUrl="~/OPBasic/OPSetting" IconFont="User">
+		</TreeNode>		
+	</TreeNode>
+	
+
+</Tree>

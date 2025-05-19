@@ -1,0 +1,192 @@
+﻿@page
+@model FineUICore.EmptyProject.RazorForms.Pages.IndexModel
+@{
+    ViewBag.Title = "首页";
+    var F = @Html.F();
+}
+
+@section head {
+
+    <link type="text/css" rel="stylesheet" href="~/res/css/index.css" />
+
+}
+
+@section body {
+
+    <div id="maincontent">
+        <h2>MES</h2>
+       
+    </div>
+
+
+    <f:Panel ID="mainPanel" Layout="Region" CssClass="mainpanel" ShowBorder="false" ShowHeader="false" IsViewPort="true">
+        <Items>
+            <f:Panel ID="sidebarRegion" CssClass="sidebarregion" RegionPosition="Left" ShowBorder="false" Width="260" ShowHeader="false"
+                     EnableCollapse="false" Collapsed="false" Layout="VBox" RegionSplit="true" RegionSplitIcon="false" RegionSplitWidth="3" RegionSplitTransparent="true">
+                <Items>
+                    <f:ContentPanel ID="sideheaderTopPanel" CssClass="topregion" ShowBorder="false" ShowHeader="false">
+                        <div id="sideheader" class="f-widget-header f-mainheader">
+                            <a class="logo" href="@Url.Content("~/")" title="MES 系統">MES 系統</a>
+                            <div class="logo-subtitle">Lightion</div>
+                        </div>
+                    </f:ContentPanel>
+                    <f:Panel ID="leftPanel" CssClass="leftregion" BoxFlex="1" ShowBorder="false" ShowHeader="false" Layout="Fit">
+                        <Items>
+                            <f:Tree ID="treeMenu" ShowBorder="false" ShowHeader="false" EnableSingleClickExpand="true"
+                                    HideHScrollbar="true" HideVScrollbar="true" ExpanderToRight="true" HeaderStyle="true" AllHeaderStyle="true" MiniModePopWidth="260">
+                            </f:Tree>                 
+                        </Items>
+                    </f:Panel>
+                </Items>
+            </f:Panel>
+            <f:Panel ID="bodyRegion" CssClass="bodyregion" RegionPosition="Center" ShowBorder="false" ShowHeader="false" Layout="VBox">
+                <Items>
+                    <f:ContentPanel ID="topPanel" CssClass="topregion" ShowBorder="false" ShowHeader="false">
+                        <div id="header" class="f-widget-header f-mainheader">
+                            <div class="header-left">
+                                 <f:Button ID="btnCollapseSidebar" CssClass="icononlyaction" ToolTip="折叠/展开侧边栏" IconAlign="Top" IconFont="_Fold" EnableDefaultState="false" TabIndex="-1">
+                                    <Listeners>
+                                        <f:Listener Event="click" Handler="onFoldClick" />
+                                    </Listeners>
+                                </f:Button>
+                            </div>
+                            <div class="header-right">
+                                <f:Button ID="btnThemeSelect" EnableDefaultCorner="false" EnableDefaultState="false" IconFont="_Skin" IconAlign="Top" CssClass="icononlyaction themes" ToolTip="主题仓库">
+                                    <Listeners>
+                                        <f:Listener Event="click" Handler="onThemeSelectClick"></f:Listener>
+                                    </Listeners>
+                                </f:Button>
+                                <f:Button EnableDefaultCorner="false" EnableDefaultState="false" IconUrl="@Url.Content("~/res/images/0.jpg")" IconAlign="Left" CssClass="userpicaction" Text="">
+                                    <Menu ID="menuSettings">
+                                        
+                                        <f:MenuSeparator>
+                                        </f:MenuSeparator>
+                                        <f:MenuButton ID="MenuFramePageStyle" Text="框架页风格">
+                                            <Menu>
+                                                <Items>
+                                                    <f:MenuCheckBox Text="暗色侧栏" ID="MenuFramePageStyleDarkLeft" AttributeDataTag="f-dark-left" GroupName="MenuFramePageStyle">
+                                                    </f:MenuCheckBox>
+                                                    <f:MenuCheckBox Text="暗色顶栏" ID="MenuFramePageStyleDarkTop" AttributeDataTag="f-dark-top" GroupName="MenuFramePageStyle">
+                                                    </f:MenuCheckBox>
+                                                    <f:MenuCheckBox Text="暗色顶栏和侧栏" ID="MenuFramePageStyleDarkTopLeft" AttributeDataTag="f-dark-top-left" GroupName="MenuFramePageStyle">
+                                                    </f:MenuCheckBox>
+                                                </Items>
+                                                <Listeners>
+                                                    <f:Listener Event="checkchange" Handler="onMenuFramePageStyleCheckChange" />
+                                                </Listeners>
+                                            </Menu>
+                                        </f:MenuButton>
+                                        <f:MenuButton ID="MenuDisplayMode" Text="显示模式">
+                                            <Menu>
+                                                <Items>
+                                                    <f:MenuCheckBox Text="紧凑模式" ID="MenuDisplayModeCompact" AttributeDataTag="compact" GroupName="MenuDisplayMode">
+                                                    </f:MenuCheckBox>
+                                                    <f:MenuCheckBox Text="小字体模式" ID="MenuDisplayModeSmall" AttributeDataTag="small" GroupName="MenuDisplayMode">
+                                                    </f:MenuCheckBox>
+                                                    <f:MenuCheckBox Text="普通模式" ID="MenuDisplayModeNormal" AttributeDataTag="normal" Checked="true" GroupName="MenuDisplayMode">
+                                                    </f:MenuCheckBox>
+                                                    <f:MenuCheckBox Text="大间距模式" ID="MenuDisplayModeLargeSpace" AttributeDataTag="largeSpace" GroupName="MenuDisplayMode">
+                                                    </f:MenuCheckBox>
+                                                    <f:MenuCheckBox Text="大字体模式" ID="MenuDisplayModeLarge" AttributeDataTag="large" GroupName="MenuDisplayMode">
+                                                    </f:MenuCheckBox>
+                                                </Items>
+                                                <Listeners>
+                                                    <f:Listener Event="checkchange" Handler="onMenuDisplayModeCheckChange" />
+                                                </Listeners>
+                                            </Menu>
+                                        </f:MenuButton>
+                                        <f:MenuButton Text="主选项卡标签" ID="MenuMainTabs">
+                                            <Menu>
+                                                <Items>
+                                                    <f:MenuCheckBox Text="多标签页" ID="MenuMainTabsMulti" AttributeDataTag="multi" Checked="true" GroupName="MenuMainTabs">
+                                                    </f:MenuCheckBox>
+                                                    <f:MenuCheckBox Text="单标签页" ID="MenuMainTabsSingle" AttributeDataTag="single" GroupName="MenuMainTabs">
+                                                    </f:MenuCheckBox>
+                                                </Items>
+                                                <Listeners>
+                                                    <f:Listener Event="checkchange" Handler="onMenuMainTabsCheckChange" />
+                                                </Listeners>
+                                            </Menu>
+                                        </f:MenuButton>
+                                        <f:MenuButton Text="语言" ID="MenuLang">
+                                            <Menu>
+                                                <Items>
+                                                    <f:MenuCheckBox Text="简体中文" ID="MenuLangZHCN" AttributeDataTag="zh_CN" Checked="true" GroupName="MenuLang">
+                                                    </f:MenuCheckBox>
+                                                    <f:MenuCheckBox Text="繁體中文" ID="MenuLangZHTW" AttributeDataTag="zh_TW" GroupName="MenuLang">
+                                                    </f:MenuCheckBox>
+                                                    <f:MenuCheckBox Text="English" ID="MenuLangEN" AttributeDataTag="en" GroupName="MenuLang">
+                                                    </f:MenuCheckBox>
+                                                    <f:MenuCheckBox Text="ئۇيغۇر تىلى" ID="MenuLangZHUEY" AttributeDataTag="zh_UEY" GroupName="MenuLang">
+                                                    </f:MenuCheckBox>
+                                                </Items>
+                                                <Listeners>
+                                                    <f:Listener Event="checkchange" Handler="onMenuLangCheckChange" />
+                                                </Listeners>
+                                            </Menu>
+                                        </f:MenuButton>
+                                        <f:MenuButton Text="CSS加载动画">
+                                            <Listeners>
+                                                <f:Listener Event="click" Handler="onLoadingSelectClick" />
+                                            </Listeners>
+                                        </f:MenuButton>
+                                        <f:MenuSeparator>
+                                        </f:MenuSeparator>
+                                     
+                                        <f:MenuSeparator>
+                                        </f:MenuSeparator>
+                                        <f:MenuText ID="menuTextCopyright" HideOnClick="false" CssClass="copyright-menutext">
+                                        </f:MenuText>
+                                    </Menu>
+                                </f:Button>
+                            </div>
+                        </div>
+                    </f:ContentPanel>
+                    <f:TabStrip ID="mainTabStrip" CssClass="centerregion" ShowInkBar="true" InkBarPosition="Bottom" BoxFlex="1" ShowBorder="true" EnableTabCloseMenu="true">
+                        <Tabs>
+                            <f:Tab ID="tabHomepage" Title="首页" IconFont="_Home" EnableIFrame="false" BodyPadding="10" ContentEl="#maincontent">
+                            </f:Tab>
+                        </Tabs>
+                    </f:TabStrip>
+                </Items>
+            </f:Panel>
+        </Items>
+    </f:Panel>
+
+    <f:Window ID="windowThemeRoller" Hidden="true" EnableResize="true" EnableMaximize="true" EnableClose="true" Height="600" Width="850"
+              IsModal="true" ClearIFrameAfterClose="false" IFrameUrl="@Url.Content("~/Themes")" EnableIFrame="true" Title="主题仓库"></f:Window>
+
+    @{
+        
+    }
+
+}
+
+@section script {
+
+    <script type="text/javascript">
+        var PARAMS = {
+            mainPanel: 'mainPanel',
+            mainTabStrip: 'mainTabStrip',
+            treeMenu: 'treeMenu',
+            sidebarRegion: 'sidebarRegion',
+            btnCollapseSidebar: 'btnCollapseSidebar',
+            tabHomepage: 'tabHomepage',
+            windowSourceCode: 'windowSourceCode',
+            windowThemeRoller: 'windowThemeRoller',
+            windowLoadingSelector: 'windowLoadingSelector',
+            windowApplyTrial: 'windowApplyTrial',
+            hfExamplesCount: 'hfExamplesCount',
+            sourceUrl: '@Url.Content("~/Home/Source")',
+            dashboardUrl: '@Url.Content("~/Block/Dashboard")',
+            mainUrl: '@Url.Content("~/Basic/Main")',
+            processNewWindowUrl: function (url) {
+                return url.replace(/\/Mobile\/\?file=/ig, '/Mobile/');
+            }
+        };
+    </script>
+
+    <script src="~/res/js/index.js?v@(GlobalConfig.ProductVersion)"></script>
+    <script src="~/res/js/mobileview.js?v@(GlobalConfig.ProductVersion)"></script>
+
+}

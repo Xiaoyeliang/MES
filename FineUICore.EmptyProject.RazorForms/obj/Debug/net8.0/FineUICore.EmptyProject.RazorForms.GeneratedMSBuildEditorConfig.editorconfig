@@ -1,0 +1,61 @@
+is_global = true
+build_property.TargetFramework = net8.0
+build_property.TargetPlatformMinVersion = 
+build_property.UsingMicrosoftNETSdkWeb = true
+build_property.ProjectTypeGuids = 
+build_property.InvariantGlobalization = 
+build_property.PlatformNeutralAssembly = 
+build_property.EnforceExtendedAnalyzerRules = 
+build_property._SupportedPlatformList = Linux,macOS,Windows
+build_property.RootNamespace = FineUICore.EmptyProject.RazorForms
+build_property.RootNamespace = FineUICore.EmptyProject.RazorForms
+build_property.ProjectDir = E:\工具文件\FineUI\FineUICORE\FineUICore\12.0.5\【空项目】FineUICore_EmptyProject_RazorForms_v12.0.5\FineUICore.EmptyProject.RazorForms\
+build_property.EnableComHosting = 
+build_property.EnableGeneratedComInterfaceComImportInterop = 
+build_property.RazorLangVersion = 8.0
+build_property.SupportLocalizedComponentNames = 
+build_property.GenerateRazorMetadataSourceChecksumAttributes = true
+build_property.MSBuildProjectDirectory = E:\工具文件\FineUI\FineUICORE\FineUICore\12.0.5\【空项目】FineUICore_EmptyProject_RazorForms_v12.0.5\FineUICore.EmptyProject.RazorForms
+build_property._RazorSourceGeneratorDebug = 
+build_property.EffectiveAnalysisLevelStyle = 8.0
+build_property.EnableCodeStyleSeverity = 
+
+[E:/工具文件/FineUI/FineUICORE/FineUICore/12.0.5/【空项目】FineUICore_EmptyProject_RazorForms_v12.0.5/FineUICore.EmptyProject.RazorForms/Pages/Error.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcRXJyb3IuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[E:/工具文件/FineUI/FineUICORE/FineUICore/12.0.5/【空项目】FineUICore_EmptyProject_RazorForms_v12.0.5/FineUICore.EmptyProject.RazorForms/Pages/Hello.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcSGVsbG8uY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[E:/工具文件/FineUI/FineUICORE/FineUICore/12.0.5/【空项目】FineUICore_EmptyProject_RazorForms_v12.0.5/FineUICore.EmptyProject.RazorForms/Pages/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcSW5kZXguY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[E:/工具文件/FineUI/FineUICORE/FineUICore/12.0.5/【空项目】FineUICore_EmptyProject_RazorForms_v12.0.5/FineUICore.EmptyProject.RazorForms/Pages/Login.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcTG9naW4uY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[E:/工具文件/FineUI/FineUICORE/FineUICore/12.0.5/【空项目】FineUICore_EmptyProject_RazorForms_v12.0.5/FineUICore.EmptyProject.RazorForms/Pages/OPBasic/OpGroup.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcT1BCYXNpY1xPcEdyb3VwLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[E:/工具文件/FineUI/FineUICORE/FineUICore/12.0.5/【空项目】FineUICore_EmptyProject_RazorForms_v12.0.5/FineUICore.EmptyProject.RazorForms/Pages/OPBasic/OpSetting.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcT1BCYXNpY1xPcFNldHRpbmcuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[E:/工具文件/FineUI/FineUICORE/FineUICore/12.0.5/【空项目】FineUICore_EmptyProject_RazorForms_v12.0.5/FineUICore.EmptyProject.RazorForms/Pages/Shared/_Layout.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcU2hhcmVkXF9MYXlvdXQuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[E:/工具文件/FineUI/FineUICORE/FineUICore/12.0.5/【空项目】FineUICore_EmptyProject_RazorForms_v12.0.5/FineUICore.EmptyProject.RazorForms/Pages/Themes.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcVGhlbWVzLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[E:/工具文件/FineUI/FineUICORE/FineUICore/12.0.5/【空项目】FineUICore_EmptyProject_RazorForms_v12.0.5/FineUICore.EmptyProject.RazorForms/Pages/_ViewImports.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcX1ZpZXdJbXBvcnRzLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[E:/工具文件/FineUI/FineUICORE/FineUICore/12.0.5/【空项目】FineUICore_EmptyProject_RazorForms_v12.0.5/FineUICore.EmptyProject.RazorForms/Pages/_ViewStart.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcX1ZpZXdTdGFydC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
