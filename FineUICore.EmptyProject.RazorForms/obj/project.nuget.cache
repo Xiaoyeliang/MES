@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "9XPe/xyz0Jg=",
+  "dgSpecHash": "NYODe8gnxcg=",
   "success": true,
-  "projectFilePath": "E:\\工具文件\\FineUI\\FineUICORE\\FineUICore\\12.0.5\\【空项目】FineUICore_EmptyProject_RazorForms_v12.0.5\\FineUICore.EmptyProject.RazorForms\\FineUICore.EmptyProject.RazorForms.csproj",
+  "projectFilePath": "D:\\GitHub\\MES\\FineUICore.EmptyProject.RazorForms\\FineUICore.EmptyProject.RazorForms.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\LB248003\\.nuget\\packages\\microsoft.aspnetcore.jsonpatch\\8.0.4\\microsoft.aspnetcore.jsonpatch.8.0.4.nupkg.sha512",
     "C:\\Users\\LB248003\\.nuget\\packages\\microsoft.aspnetcore.mvc.newtonsoftjson\\8.0.4\\microsoft.aspnetcore.mvc.newtonsoftjson.8.0.4.nupkg.sha512",
